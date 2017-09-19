@@ -1,18 +1,10 @@
 const express = require('express');
-const passport = require('passport');
-const GoogleStrategey = require('passport-google-oauth20').Strategy;
+require('./services/passport');
 
 const app = express();
+require('./routes/authRoutes')(app);
 
-passport.use(new GoogleStrategey());
 
-
-// app.get('/', (req, res) => {
-//
-//     res.send({hi: 'there'});
-//
-// });
-//
 
 const PORT = process.env.PORT || 5000;
 
